@@ -1,6 +1,3 @@
-import { DashboardLayout } from "../../dashboard/Layout";
-
-// Data for E-Book Products and Purchased Books
 const ebookProducts = [
   {
     title: "E-Book 1",

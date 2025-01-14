@@ -1,5 +1,3 @@
-import { DashboardLayout } from "../../dashboard/Layout";
-
 export default function ActiveTask() {
   return (
     <div className="container mx-auto px-4">

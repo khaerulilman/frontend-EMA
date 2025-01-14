@@ -2,6 +2,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  rating: number;
+  comment: string;
+  imageSrc: string;
+}
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -90,7 +99,7 @@ const TestimonialSection = () => {
     );
   };
 
-  const TestimonialCard = ({ testimonial }) => (
+  const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     <motion.div
       variants={cardVariants}
       initial="initial"
@@ -166,7 +175,7 @@ const TestimonialSection = () => {
           variants={fadeInUp}
           className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center "
         >
-          <span className="font-more-sugar">What Our</span>{" "}
+          <span>What Our</span>{" "}
           <span className="text-yellowCustom font-more-sugar">
             Students Say
           </span>

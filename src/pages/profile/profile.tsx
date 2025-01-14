@@ -1,5 +1,3 @@
-import { DashboardLayout } from "../../dashboard/Layout";
-
 export default function Profile() {
   const userProfile = {
     name: "Ilman",

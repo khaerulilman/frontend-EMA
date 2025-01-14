@@ -1,6 +1,3 @@
-// pages/events/quiz-history.tsx
-import { DashboardLayout } from "../../dashboard/Layout";
-
 const historyData = [
   {
     id: 1,

@@ -1,5 +1,3 @@
-import { DashboardLayout } from "../../dashboard/Layout";
-
 export default function Certificate() {
   return (
     <div className="container mx-auto px-4">

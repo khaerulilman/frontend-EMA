@@ -16,7 +16,6 @@ module.exports = {
       fontFamily: {
         sans: ["Gotham", "sans-serif"],
         rounded: ["Gotham Rounded", "sans-serif"],
-        "more-sugar": ['"More Sugar"', "cursive"],
       },
     },
   },

@@ -1,6 +1,3 @@
-// pages/events/limited-quiz.tsx
-import { DashboardLayout } from "../../dashboard/Layout";
-
 const quizData = [
   {
     id: 1,

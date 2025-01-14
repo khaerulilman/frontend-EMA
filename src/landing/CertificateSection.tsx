@@ -17,7 +17,7 @@ const staggerChildren = {
 };
 
 const CertificateSection = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const certificates = [
     {
@@ -41,13 +41,10 @@ const CertificateSection = () => {
         <div className="container mx-auto px-4">
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center font-more-sugar"
+            className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center"
           >
-            <span className="font-more-sugar">Get</span>
-            <span className="text-yellowCustom font-more-sugar">
-              {" "}
-              Certified
-            </span>
+            <span>Get</span>
+            <span className="text-yellowCustom"> Certified</span>
           </motion.h2>
           <div className="flex flex-wrap justify-center gap-6">
             {certificates.map((cert, index) => (
@@ -64,12 +61,10 @@ const CertificateSection = () => {
                   className="w-full h-auto object-cover rounded-lg max-h-48"
                 />
                 <div className="p-4">
-                  <h3 className="text-xl font-semibold text-blueCustom font-more-sugar">
+                  <h3 className="text-xl font-semibold text-blueCustom">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-600 mt-2 font-more-sugar">
-                    {cert.description}
-                  </p>
+                  <p className="text-gray-600 mt-2">{cert.description}</p>
                 </div>
               </motion.div>
             ))}

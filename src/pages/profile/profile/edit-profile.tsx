@@ -8,28 +8,11 @@ export default function EditProfile() {
     profilePicture: "", // Placeholder for profile picture URL
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Profile updated:", formData);
-    // This is where form submission logic will go (e.g., sending data to a backend).
-  };
-
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">Edit Profile</h1>
 
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-lg shadow-md"
-      >
+      <form className="bg-white p-6 rounded-lg shadow-md">
         <div className="mb-4">
           <label
             className="block text-gray-700 font-semibold mb-2"
@@ -42,7 +25,6 @@ export default function EditProfile() {
             id="name"
             name="name"
             value={formData.name}
-            onChange={handleInputChange}
             className="w-full px-4 py-2 border rounded-md"
           />
         </div>
@@ -59,7 +41,6 @@ export default function EditProfile() {
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleInputChange}
             className="w-full px-4 py-2 border rounded-md"
           />
         </div>
@@ -75,7 +56,6 @@ export default function EditProfile() {
             id="bio"
             name="bio"
             value={formData.bio}
-            onChange={handleInputChange}
             className="w-full px-4 py-2 border rounded-md"
           />
         </div>
@@ -92,7 +72,6 @@ export default function EditProfile() {
             id="profilePicture"
             name="profilePicture"
             value={formData.profilePicture}
-            onChange={handleInputChange}
             className="w-full px-4 py-2 border rounded-md"
           />
         </div>
