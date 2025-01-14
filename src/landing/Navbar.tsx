@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../pages/context/authContext";
+import { useAuth } from "../context/authContext";
 import { motion } from "framer-motion";
 import { LogIn, Menu, X } from "lucide-react";
 import Link from "next/link"; // Tambahkan import Link

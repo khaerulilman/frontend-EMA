@@ -3,7 +3,7 @@ import "tailwindcss/tailwind.css";
 import { AppProps } from "next/app";
 import { DashboardLayout } from "../dashboard/Layout";
 import { useRouter } from "next/router";
-import { AuthProvider, useAuth } from "./context/authContext";
+import { AuthProvider, useAuth } from "../context/authContext";
 
 // Fungsi untuk memeriksa apakah jalur saat ini adalah jalur publik
 function isPublicPath(path: string, publicPaths: string[]): boolean {
