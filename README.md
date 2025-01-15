@@ -2,6 +2,8 @@
 
 ![Salvia-kit Dashboard v8](https://www.salvia-kit.com/images/dashboards/dashv8.jpg)
 
+## 📋 Tecnology
+React + Next JS , Tailwind CSS 
 ## 📋 Documentation
 You can see the documentation on [http://localhost:3000/admin/documentation](http://localhost:3000/admin/documentation)
 
