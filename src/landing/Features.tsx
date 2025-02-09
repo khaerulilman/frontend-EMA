@@ -1,26 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
-
-const staggerChildren = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const sectionAnimation = {
-  initial: { opacity: 0, y: 50 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 1.2, delay: 0.9 },
-};
 
 const Video = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,17 +7,17 @@ const Video = () => {
   const videos = [
     {
       id: 1,
-      url: "https://example.com/video1.mp4",
+      url: "https://ik.imagekit.io/9wqihtp5m/Hi,%20I%20am%20Virgan%20from%209th%20grade.This%20is%20a%20video%20of%20my%20English%20experience%20during%202%20years%20of%20learning%20in%20Village%20English%20Course.Thanks%20for%20watching.%20Don't%20forget%20to%20like._englishlearning%20_englishcourse%20_speakingenglish.mp4?updatedAt=1737558186678",
       title: "Video Testimonial 1",
     },
     {
       id: 2,
-      url: "https://example.com/video2.mp4",
+      url: "https://ik.imagekit.io/9wqihtp5m/YOSI%20VIDEO%20TESTIMONI?updatedAt=1737671952621",
       title: "Video Testimonial 2",
     },
     {
       id: 3,
-      url: "https://example.com/video3.mp4",
+      url: "https://ik.imagekit.io/9wqihtp5m/bella%20video?updatedAt=1737672014573",
       title: "Video Testimonial 3",
     },
   ];
@@ -56,29 +35,29 @@ const Video = () => {
   };
 
   return (
-    <motion.section
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      variants={staggerChildren}
-      className="py-20 bg-yellowCustom relative"
-    >
+    <section className="relative py-20 bg-yellowCustom">
+      {/* Border atas */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blueCustom to-transparent"></div>
+
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial="initial"
-          animate="animate"
-          variants={fadeInUp}
-          className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center"
-        >
+        <h2 className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center">
           <span className="text-white font-more-sugar">Our</span>{" "}
           <span className="font-more-sugar">Speaking Practices</span>
-        </motion.h2>
+        </h2>
 
         <div className="relative max-w-2xl mx-auto">
-          <div className="relative aspect-video bg-black rounded-lg shadow-xl overflow-hidden">
+          {/* Card dengan efek keren dan border baru */}
+          <div
+            className="relative aspect-video bg-black rounded-2xl shadow-2xl overflow-hidden 
+          border-4 border-blueCustom bg-clip-padding backdrop-filter backdrop-blur-md 
+          transition-all duration-500 hover:shadow-blue-500/50 hover:border-blue-500"
+          >
+            {/* Efek Glow di Hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100"></div>
+
             <video
               key={videos[currentIndex].id}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain rounded-2xl"
               controls
               src={videos[currentIndex].url}
             >
@@ -86,9 +65,11 @@ const Video = () => {
             </video>
           </div>
 
+          {/* Tombol navigasi */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg 
+          hover:bg-gray-100 transition-colors z-10"
             aria-label="Previous video"
           >
             <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -96,50 +77,23 @@ const Video = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg 
+          hover:bg-gray-100 transition-colors z-10"
             aria-label="Next video"
           >
             <ChevronRight className="w-6 h-6 text-gray-700" />
           </button>
 
+          {/* Indikator posisi video */}
           <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-10">
             {currentIndex + 1} / {videos.length}
           </div>
         </div>
       </div>
 
-      {/* Animated Section with Delay */}
-      <motion.section
-        initial="initial"
-        animate="animate"
-        variants={sectionAnimation}
-        className="mt-20"
-      >
-        <div className="flex justify-between">
-          <div
-            className="lg:block hidden"
-            style={{
-              width: "50%",
-              height: "0",
-              marginLeft: "100px",
-            }}
-          >
-            <img
-              src="assets/images/icon-2.png"
-              style={{
-                width: "300px",
-                position: "relative",
-                top: "-50px",
-                left: "-50px",
-                animation: "float 3s ease-in-out infinite",
-              }}
-              alt="Floating Icon"
-            />
-          </div>
-          <div></div>
-        </div>
-      </motion.section>
-    </motion.section>
+      {/* Border bawah */}
+      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blueCustom to-transparent"></div>
+    </section>
   );
 };
 

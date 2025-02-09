@@ -155,30 +155,6 @@ const HeroSection = () => {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellowCustom opacity-10 rounded-full translate-y-1/2 -translate-x-1/2" />
 
         {/* Wave SVG */}
-        <svg
-          id="wave"
-          style={{
-            transform: "rotate(0deg)",
-            transition: "0.3s",
-            bottom: "-1px",
-          }}
-          viewBox="0 0 1440 100"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 m-0"
-        >
-          <defs>
-            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-              <stop stopColor="#DDC757" offset="0%"></stop>
-              <stop stopColor="#D46945" offset="100%"></stop>
-            </linearGradient>
-          </defs>
-          <path
-            style={{ transform: "translate(0, 0px)", opacity: 1 }}
-            fill="url(#sw-gradient-0)"
-            d="M0,10L72,0L144,70L216,20L288,40L360,70L432,90L504,90L576,90L648,20L720,40L792,80L864,90L936,30L1008,20L1080,70L1152,40L1224,20L1296,50L1368,60L1440,20L1512,70L1584,30L1656,60L1728,50L1728,100L1656,100L1584,100L1512,100L1440,100L1368,100L1296,100L1224,100L1152,100L1080,100L1008,100L936,100L864,100L792,100L720,100L648,100L576,100L504,100L432,100L360,100L288,100L216,100L144,100L72,100L0,100Z"
-          ></path>
-        </svg>
       </div>
     </div>
   );

@@ -1,86 +1,123 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 const documentationData = [
   {
     imgSrc: "https://via.placeholder.com/400",
-    altText: "Dokumentasi 1",
-    title: "Judul Dokumentasi 1",
+    altText: "Documentation 1",
+    title: "Course Documentation",
     description:
-      "Deskripsi singkat mengenai dokumentasi ini. Jelaskan cara penggunaannya, fitur-fitur utama, dan apa yang dapat dipelajari dari dokumentasi ini.",
+      "Comprehensive materials that guide you through every aspect of the course. Learn at your own pace with detailed explanations and practical examples.",
+    tag: "Learning Materials",
   },
   {
     imgSrc: "https://via.placeholder.com/400",
-    altText: "Dokumentasi 2",
-    title: "Judul Dokumentasi 2",
+    altText: "Documentation 2",
+    title: "Student Progress Tracking",
     description:
-      "Deskripsi singkat mengenai dokumentasi kedua ini. Berikan penjelasan tentang apa yang ada dalam dokumentasi ini dan bagaimana cara memanfaatkannya.",
+      "Monitor your learning journey with our advanced progress tracking system. Set goals, track achievements, and visualize your improvement over time.",
+    tag: "Progress Tracking",
   },
 ];
 
-const DocumentationSection: React.FC = () => {
-  const imageHoverVariant = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0px 8px 20px bg-blueCustom borderRadius: 10px",
+const DocumentationSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
     },
   };
 
   return (
-    <section className="py-5 bg-gradient-to-b from-yellowCustom via-blue-500 to-blue-700">
-      <div
-        style={{
-          width: "100%",
-          height: "2px",
-          background:
-            "linear-gradient(to right, transparent, #808080, transparent)",
-          borderRadius: "10px",
-          margin: "20px 0", // Jarak pemisah
-        }}
-      ></div>
+    <section className="m-2 py-16 bg-gradient-to-b from-yellowCustom via-blue-500 to-blue-700 overflow-hidden border-4 border-white shadow-[0_0_15px_rgba(255,255,255,0.6)] rounded-xl">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-white mb-4 font-sans">
+            Course <span className="text-blueCustom">Documentation</span>
+          </h2>
+          <div className="w-24 h-1 bg-yellow-300 mx-auto rounded-full"></div>
+        </motion.div>
 
-      <div className="container mx-auto px-4 pt-20 pb-20">
-        <h2 className="text-3xl font-bold mb-12 text-white text-center">
-          Dokumentasi <span className="text-blueCustom">Course</span>
-        </h2>
-
-        <div className="space-y-16">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-24"
+        >
           {documentationData.map((doc, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
               className={`flex flex-col ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } items-center gap-8 md:gap-12`}
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-12`}
             >
-              {/* Image Container */}
               <motion.div
-                className="w-full md:w-1/2"
-                whileHover="hover"
-                variants={imageHoverVariant}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
+                className="w-full lg:w-1/2"
               >
-                <img
-                  src={doc.imgSrc}
-                  alt={doc.altText}
-                  className="w-full h-64 object-cover rounded-[30px] shadow-xl transition-all duration-300"
-                />
+                <div className="relative group">
+                  <img
+                    src={doc.imgSrc}
+                    alt={doc.altText}
+                    className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
+                  />
+                  <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl"></div>
+                </div>
               </motion.div>
 
-              {/* Content Container */}
               <div
-                className={`w-full md:w-1/2 text-center ${
-                  index % 2 === 0 ? "md:text-left" : "md:text-right"
+                className={`w-full lg:w-1/2 ${
+                  index % 2 === 0 ? "lg:pl-8" : "lg:pr-8"
                 }`}
               >
-                <h3 className="text-2xl font-semibold text-yellowCustom mb-4">
-                  {doc.title}
-                </h3>
-                <p className="text-white mb-4 leading-relaxed">
-                  {doc.description}
-                </p>
+                <motion.div
+                  initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="space-y-6"
+                >
+                  <span className="inline-block px-4 py-2 bg-yellow-300 text-blue-800 rounded-full text-sm font-semibold">
+                    {doc.tag}
+                  </span>
+                  <h3 className="text-3xl font-bold text-white">{doc.title}</h3>
+                  <p className="text-gray-100 text-lg leading-relaxed">
+                    {doc.description}
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-3 bg-yellow-300 text-blue-800 rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-300"
+                  >
+                    Learn More
+                  </motion.button>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

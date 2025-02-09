@@ -34,9 +34,9 @@ const Home: React.FC = () => {
       <section id="pricecourse">
         <PriceCourse />
       </section>
-      <section id="Product">
+      {/* <section id="Product">
         <ProductPreview />
-      </section>
+      </section> */}
       <DocumentationSection />
       <section id="certificate">
         <CertificateSection />

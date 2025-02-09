@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Award, Star } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -11,78 +11,56 @@ interface Testimonial {
   imageSrc: string;
 }
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
-
-const cardVariants = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-  exit: {
-    opacity: 0,
-    scale: 0.9,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
 const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Lutfia",
       role: "English Student",
       rating: 5,
       comment:
         "The learning experience has been incredible. The personalized attention and structured curriculum helped me improve my English skills significantly.",
-      imageSrc: "/api/placeholder/100/100",
+      imageSrc:
+        "https://ik.imagekit.io/9wqihtp5m/WhatsApp%20Image%202025-01-08%20at%2001.04.13.jpeg?updatedAt=1737557968253",
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Aura",
       role: "Business Professional",
       rating: 5,
       comment:
-        "Outstanding teaching methods! I've seen remarkable progress in my language abilities.",
-      imageSrc: "/api/placeholder/100/100",
+        "i think study in this course is fun, bcs miss is fun so its more relaxed to do the tests given by the students. miss also doesn't tell us to rush to understand, is really guided.",
+      imageSrc: "https://ik.imagekit.io/9wqihtp5m/AURA?updatedAt=1737671927961",
     },
     {
       id: 3,
-      name: "Emma Garcia",
+      name: "Virgan",
       role: "University Student",
       rating: 5,
       comment:
-        "The interactive sessions made it easy to grasp complex language concepts!",
-      imageSrc: "/api/placeholder/100/100",
+        "I am genuinely satisfied with taking English lessons at the English My Adventure Course. The teaching method is very interactive and easy to understand. Miss Syifa is very professional and patient in explaining the material.",
+      imageSrc:
+        "https://ik.imagekit.io/9wqihtp5m/virgan?updatedAt=1737672056369",
     },
     {
       id: 4,
-      name: "John Doe",
+      name: "Haikal",
       role: "Travel Enthusiast",
       rating: 4,
       comment:
-        "The lessons are very interactive and practical. They have helped me communicate better during my travels.",
-      imageSrc: "/api/placeholder/100/100",
+        "my experience during the english course at miss syifa was very enjoyable, fun and exciting. miss also teaches her students in a fun way so her students never get bored.",
+      imageSrc:
+        "https://ik.imagekit.io/9wqihtp5m/WhatsApp%20Image%202025-02-09%20at%2002.44.18.jpeg?updatedAt=1739112275573",
     },
     {
       id: 5,
-      name: "Alice Smith",
+      name: "Reynaldi",
       role: "Software Developer",
       rating: 5,
       comment:
-        "Great course! The instructors are very knowledgeable and supportive.",
+        "I am genuinely satisfied with taking English lessons at the English My Adventure Course. The teaching method is very interactive and easy to understand. Miss Syifa is very professional and patient in explaining the material. In a short time, my speaking and writing skills improved greatly. Apart from that, the class atmosphere is comfortable, so I am more motivated to study. Thank you, English My Adventure Course, for helping me achieve high grades at school and be more confident in speaking English",
       imageSrc: "/api/placeholder/100/100",
     },
   ];
@@ -99,154 +77,87 @@ const TestimonialSection = () => {
     );
   };
 
-  const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
+  const TestimonialCard = ({
+    testimonial,
+    index,
+  }: {
+    testimonial: Testimonial;
+    index: number;
+  }) => (
     <motion.div
-      variants={cardVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      whileHover={{ scale: 1.02 }}
-      className="bg-white rounded-xl shadow-lg p-6 relative hover:shadow-2xl transition-all duration-300 transform border-2 border-blue-500"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="bg-white rounded-2xl shadow-xl p-6 relative hover:shadow-2xl transition-all duration-300 border-2 border-blue-100 hover:border-blue-300"
     >
-      <div className="flex items-center mb-4">
-        <div className="relative">
-          <motion.img
-            whileHover={{ scale: 1.1 }}
+      <div className="flex items-center mb-6">
+        <motion.div whileHover={{ scale: 1.1 }} className="relative">
+          <img
             src={testimonial.imageSrc}
             alt={testimonial.name}
-            className="w-16 h-16 rounded-full object-cover border-2 border-blueCustom transition-transform duration-300"
+            className="w-20 h-20 rounded-full object-cover border-4 border-blue-500"
           />
-        </div>
+          <div className="absolute -bottom-2 -right-2 bg-yellow-400 rounded-full p-1">
+            <Star className="w-4 h-4 text-white" />
+          </div>
+        </motion.div>
         <div className="ml-4">
-          <h3 className="font-bold text-lg text-gray-800">
+          <h3 className="font-bold text-xl text-gray-800 font-sans">
             {testimonial.name}
           </h3>
-          <p className="text-gray-600 text-sm">{testimonial.role}</p>
+          <p className="text-blue-600 font-medium">{testimonial.role}</p>
         </div>
       </div>
 
-      <div className="flex mb-4">
-        {[...Array(testimonial.rating)].map((_, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-          </motion.div>
-        ))}
+      <div className="relative">
+        <p className="text-gray-700 leading-relaxed italic">
+          "{testimonial.comment}"
+        </p>
+        <div className="absolute -top-4 -left-2 text-7xl text-blue-100 font-serif">
+          "
+        </div>
       </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="text-gray-700 leading-relaxed"
-      >
-        "{testimonial.comment}"
-      </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0, rotate: -10 }}
-        animate={{ opacity: 0.2, rotate: 0 }}
-        transition={{ delay: 0.2 }}
-        className="absolute top-4 right-4 text-6xl text-gray-200 font-serif"
-      >
-        "
-      </motion.div>
+      <div className="flex mt-4">
+        {[...Array(testimonial.rating)].map((_, i) => (
+          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+        ))}
+      </div>
     </motion.div>
   );
 
-  const desktopTestimonials = testimonials.slice(
-    currentIndex,
-    currentIndex + 3
-  );
-
   return (
-    <motion.section
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
-      className="py-20 bg-gray-50 "
-    >
-      <div className="container mx-auto px-4 ">
-        <motion.h2
-          variants={fadeInUp}
-          className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center "
-        >
-          <span>What Our</span>{" "}
-          <span className="text-yellowCustom font-more-sugar">
-            Students Say
-          </span>
-        </motion.h2>
+    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative">
+      {/* Top Border Design */}
+      <div className="absolute top-0 left-0 right-0">
+        <div className="h-2 bg-gradient-to-r from-blue-500 via-yellow-400 to-blue-500"></div>
+        <div className="h-1 bg-blue-100 mt-1"></div>
+      </div>
 
-        {/* Desktop View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {desktopTestimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl font-bold mb-4">
+            <span className="text-blue-600">What Our</span>{" "}
+            <span className="text-yellow-400">Students Say</span>
+          </h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard
+              key={testimonial.id}
+              testimonial={testimonial}
+              index={index}
+            />
           ))}
         </div>
-
-        <div className="hidden md:flex justify-between mt-8 ">
-          <button
-            onClick={prevSlide}
-            className="p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors transform -translate-x-1/2"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors transform translate-x-1/2"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
-          </button>
-        </div>
-
-        {/* Mobile Carousel */}
-        <div className="relative md:hidden  ">
-          <AnimatePresence mode="wait">
-            <TestimonialCard
-              key={currentIndex}
-              testimonial={testimonials[currentIndex]}
-            />
-          </AnimatePresence>
-
-          <div className="absolute inset-y-0 left-0 right-0 flex justify-between items-center pointer-events-none ">
-            <button
-              onClick={prevSlide}
-              className="pointer-events-auto p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors transform -translate-x-1/2"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="pointer-events-auto p-2 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-colors transform translate-x-1/2"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
-          </div>
-
-          {/* Pagination Dots */}
-          <div className="flex justify-center mt-4 gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-blueCustom" : "bg-gray-300"
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

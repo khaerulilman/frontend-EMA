@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
-import Link from "next/link"; // Tambahkan import Link
+import { Sparkles, Book, GraduationCap, Heart } from "lucide-react";
 
 interface Product {
   title: string;
@@ -15,33 +16,42 @@ const products: Product[] = [
     description: "Learn the basics of programming.",
     price: "$20",
     discountPrice: "$15",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "https://via.placeholder.com/400/09f/fff.png",
   },
 ];
 
 const ProductPreview: React.FC = () => {
-  const cardHoverVariant = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
-    },
-  };
-
   return (
     <section className="py-20 bg-yellowCustom">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6 text-blue-600">
-          <span className="text-white">Preview </span>
-          <span className="text-blueCustom">Produk</span>
-        </h2>
-        <div className="flex justify-center items-center space-x-6">
+        <div className="flex items-center justify-center mb-4">
+          <Sparkles className="w-6 h-6 text-yellow-400 mr-2" />
+          <h3 className="text-4xl font-bold">
+            <span className="text-blue-600">Professional</span>{" "}
+            <span className="text-yellow-400">Guide</span>
+          </h3>
+          <Sparkles className="w-6 h-6 text-yellow-400 ml-2" />
+        </div>
+        <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+        <motion.div
+          className="flex justify-center items-center space-x-6 mt-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
+          }}
+        >
           {products.slice(0, 5).map((product, index) => (
             <motion.div
               key={index}
-              className="bg-white p-4 rounded-[30px] shadow-lg w-60"
-              whileHover="hover"
-              variants={cardHoverVariant}
-              transition={{ duration: 0.3 }}
+              className="bg-white p-4 rounded-[30px] shadow-lg w-60 cursor-pointer overflow-hidden"
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5 }}
             >
               <img
                 src={product.imageUrl}
@@ -62,18 +72,18 @@ const ProductPreview: React.FC = () => {
                   {product.price}
                 </span>
               </div>
-
               {/* Buy Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-4 px-6 py-3 bg-yellowCustom text-white rounded-full font-semibold transition-colors hover:bg-opacity-90"
-              >
-                <Link href="/products/book">Get E-Book</Link>
-              </motion.button>
+              <Link href="/products/book">
+                <motion.button
+                  className="mt-4 px-6 py-3 bg-yellowCustom text-white rounded-full font-semibold transition-colors hover:bg-opacity-90"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  Get E-Book
+                </motion.button>
+              </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
