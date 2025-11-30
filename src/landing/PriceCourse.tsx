@@ -10,15 +10,15 @@ const PriceCourse = () => {
     {
       name: "Dasar",
       sessions: "4x",
-      registerPrice: "Rp 260K",
-      monthlyPrice: "Rp 250K",
+      registerPrice: "Rp 260.000",
+      monthlyPrice: "Rp 250.000",
       popular: false,
     },
     {
       name: "Intensif",
       sessions: "6x",
-      registerPrice: "Rp 360K",
-      monthlyPrice: "Rp 350K",
+      registerPrice: "Rp 360.000",
+      monthlyPrice: "Rp 350.000",
       popular: true,
     },
   ];
