@@ -6,24 +6,19 @@ import Link from "next/link";
 const PriceCourse = () => {
   const courses = [
     {
-      title: "PRIVATE (1 Murid)",
-      description: "70 Menit per Pertemuan — Cocok untuk fokus perkembangan individu.",
-      imageUrl: "https://via.placeholder.com/300x200",
-      level: "Best Seller",
-      pricing: [
-        { paket: "Dasar (4x)", awalDaftar: "Rp 260K", bulanan: "Rp 250K" },
-        { paket: "Intensif (6x)", awalDaftar: "Rp 360K", bulanan: "Rp 350K" }
+      title: "Basic English Course",
+      description:
+        "Improve your basic English skills with our beginner-friendly course.",
+      price: "Rp. 80,000",
+      features: [
+        "24/7 Access",
+        "Certificate",
+        "Expert Support",
+        "Practice Materials",
       ],
+      imageUrl: "https://via.placeholder.com/150",
+      level: "Beginner",
     },
-    {
-      title: "Semi PRIVATE (2 Murid)",
-      description: "70 Menit per Pertemuan — Sharing belajar, lebih hemat.",
-      imageUrl: "https://via.placeholder.com/300x200",
-      level: "Hemat",
-      pricing: [
-        { paket: "Paket Berdua (4x)", awalDaftar: "Rp 235K", bulanan: "Rp 225K" },
-      ],
-    }
   ];
 
   const containerVariants = {
