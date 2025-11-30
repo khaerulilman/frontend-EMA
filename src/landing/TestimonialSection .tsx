@@ -28,7 +28,7 @@ const TestimonialSection = () => {
     {
       id: 2,
       name: "Aura",
-      role: "Business Professional",
+      role: "English Student",
       rating: 5,
       comment:
         "i think study in this course is fun, bcs miss is fun so its more relaxed to do the tests given by the students. miss also doesn't tell us to rush to understand, is really guided.",
@@ -37,7 +37,7 @@ const TestimonialSection = () => {
     {
       id: 3,
       name: "Virgan",
-      role: "University Student",
+      role: "English Student",
       rating: 5,
       comment:
         "I am genuinely satisfied with taking English lessons at the English My Adventure Course. The teaching method is very interactive and easy to understand. Miss Syifa is very professional and patient in explaining the material.",
@@ -47,7 +47,7 @@ const TestimonialSection = () => {
     {
       id: 4,
       name: "Haikal",
-      role: "Travel Enthusiast",
+      role: "English Student",
       rating: 4,
       comment:
         "my experience during the english course at miss syifa was very enjoyable, fun and exciting. miss also teaches her students in a fun way so her students never get bored.",
@@ -57,12 +57,30 @@ const TestimonialSection = () => {
     {
       id: 5,
       name: "Reynaldi",
-      role: "Software Developer",
+      role: "English Student",
       rating: 5,
       comment:
         "I am genuinely satisfied with taking English lessons at the English My Adventure Course. The teaching method is very interactive and easy to understand. Miss Syifa is very professional and patient in explaining the material. In a short time, my speaking and writing skills improved greatly. Apart from that, the class atmosphere is comfortable, so I am more motivated to study. Thank you, English My Adventure Course, for helping me achieve high grades at school and be more confident in speaking English",
       imageSrc: "/api/placeholder/100/100",
     },
+    {
+      id: 6,
+      name: "Hasna",
+      role: "English Student",
+      rating: 5,
+      comment:
+      "Selama ini hanya mengerti kata dan kalimat sederhana, setelah les menjadi lebih banyak kosa kata dan kalimat yg dimengerti dan lebih baik dalam pronunciationnya. Di rumah juga mulai berani speak english.",
+      imageSrc: "https://ik.imagekit.io/fs0yie8l6/Ema-course/gambar-1-testimoni.jpg",
+      },
+      {
+      id: 7,
+      name: "Qianzi",
+      role: "English Student",
+      rating: 5,
+      comment:
+      "Alhamdulillah udh bisa menyebutkan angka2, buah2an dan warna dlam bhs inggris",
+      imageSrc: "https://ik.imagekit.io/fs0yie8l6/Ema-course/gambar-2-testimoni.jpg",
+      },
   ];
 
   const nextSlide = () => {
