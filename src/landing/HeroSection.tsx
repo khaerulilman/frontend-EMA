@@ -34,13 +34,19 @@ const HeroSection = () => {
                     <span className="text-blueCustom">Start Learning</span>
                   </motion.button>
                 </Link>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 border-2 border-white text-white rounded-full font-semibold transition-colors hover:bg-white hover:text-blueCustom"
+                <a
+                  href="https://quiz.zep.us/en/play/Ov5lLm"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Trial Quiz
-                </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-3 border-2 border-white text-white rounded-full font-semibold transition-colors hover:bg-white hover:text-blueCustom"
+                  >
+                    Trial Quiz
+                  </motion.button>
+                </a>
               </div>
             </motion.div>
 
