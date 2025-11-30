@@ -25,15 +25,20 @@ const HeroSection = () => {
                 World of Endless Opportunities
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/class/my-class" legacyBehavior>
+               <a
+                  href="https://wa.me/6285353890080"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-3 bg-yellowCustom text-blackCustom rounded-full font-semibold transition-colors hover:bg-opacity-90"
                   >
-                    <span className="text-blueCustom">Start Learning</span>
+                    <span className="text-blueCustom">Join Now</span>
                   </motion.button>
-                </Link>
+                </a>
+
                 <a
                   href="https://quiz.zep.us/en/play/Ov5lLm"
                   target="_blank"
@@ -47,6 +52,7 @@ const HeroSection = () => {
                     Trial Quiz
                   </motion.button>
                 </a>
+
               </div>
             </motion.div>
 
