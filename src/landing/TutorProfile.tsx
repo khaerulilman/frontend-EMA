@@ -88,7 +88,7 @@ const TutorProfile = () => {
             </div>
             <div className="text-center p-4 bg-white rounded-xl shadow-md">
               <GraduationCap className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-              <p className="text-blue-600 font-semibold">3 Years Experience</p>
+              <p className="text-blue-600 font-semibold">4 Years Experience</p>
             </div>
             <div className="text-center p-4 bg-white rounded-xl shadow-md">
               <Heart className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
