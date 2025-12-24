@@ -32,11 +32,11 @@ const Home: React.FC = () => {
         <TutorProfile />
       </section>
       <section id="pricecourse">
-        {/* <PriceCourse /> */}
+       <PriceCourse /> 
       </section>
-      {/* <section id="Product">
+      <section id="Product">
         <ProductPreview />
-      </section> */}
+      </section>
       <DocumentationSection />
       <section id="certificate">
         <CertificateSection />
