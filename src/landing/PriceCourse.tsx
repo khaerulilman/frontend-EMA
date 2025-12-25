@@ -85,17 +85,17 @@ const PriceCourse = () => {
         animate="visible"
       >
         {/* Header */}
-        <motion.div className="text-center mb-12" variants={itemVariants}>
+        {/* <motion.div className="text-center mb-12" variants={itemVariants}>
           <h2 className="text-5xl font-bold mb-4">
             <span className="text-blue-600">Paket</span>{" "}
             <span className="text-yellow-500">Kursus</span>
           </h2>
           <p className="text-gray-600 text-lg">Pilih paket yang sesuai dengan kebutuhan belajar Anda</p>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mt-4 rounded-full"></div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Tab Switcher */}
-        <motion.div className="flex justify-center mb-12" variants={itemVariants}>
+        {/* <motion.div className="flex justify-center mb-12" variants={itemVariants}>
           <div className="bg-white rounded-2xl shadow-lg p-2 inline-flex">
             <button
               onClick={() => setActiveTab("private")}
@@ -120,10 +120,10 @@ const PriceCourse = () => {
               SEMI PRIVATE (2 Murid)
             </button>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Private Packages */}
-        {activeTab === "private" && (
+        {/* {activeTab === "private" && (
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -196,7 +196,7 @@ const PriceCourse = () => {
               ))}
             </div>
           </motion.div>
-        )}
+        )} */}
 
         {/* Semi Private Package */}
         {activeTab === "semi-private" && (
