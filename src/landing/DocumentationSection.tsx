@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const documentationData = [
   {
-    imgSrc: "https://via.placeholder.com/400",
+    imgSrc: "https://res.cloudinary.com/dsv5gqxsv/image/upload/v1768289453/WhatsApp_Image_2026-01-13_at_14.27.30_1_a6whtb.jpg",
     altText: "Documentation 1",
     title: "Course Documentation",
     description:
@@ -11,7 +11,7 @@ const documentationData = [
     tag: "Learning Materials",
   },
   {
-    imgSrc: "https://via.placeholder.com/400",
+    imgSrc: "https://res.cloudinary.com/dsv5gqxsv/image/upload/v1768289453/WhatsApp_Image_2026-01-13_at_14.27.30_2_wu2prc.jpg",
     altText: "Documentation 2",
     title: "Student Progress Tracking",
     description:
