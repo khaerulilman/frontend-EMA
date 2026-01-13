@@ -10,15 +10,22 @@ const Footer: React.FC = () => {
             <div className="flex flex-col space-y-2">
               <a href="#" className="hover:text-blue-400">Facebook</a>
               <a href="#" className="hover:text-blue-400">Twitter</a>
-              <a href="#" className="hover:text-pink-400">Instagram</a>
+              <a
+                href="https://www.instagram.com/english_my_adventure"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-400"
+              >
+                Instagram
+              </a>
             </div>
           </div>
 
           {/* Contact Section */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Information</h3>
-            <p className="mb-2"><strong>Phone:</strong> +62 813-1347-3034</p>
-            <p className="mb-2"><strong>Email:</strong> khaerulilman10@gmail.com</p>
+            <p className="mb-2"><strong>Phone:</strong> +62 853-5389-0080</p>
+            <p className="mb-2"><strong>Email:</strong> syifa3596@gmail.com</p>
             <p><strong>Address:</strong> Jl. Badak Putih, Pelabuhanratu, Indonesia</p>
           </div>
 
@@ -27,7 +34,7 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg mb-4">Our Location</h3>
             <div className="rounded-lg overflow-hidden shadow-md">
               <iframe
-                src="https://www.google.com/maps?q=Jl.+Badak+Putih,+Pelabuhanratu,+Indonesia&output=embed"
+                src="https://www.google.com/maps?q=-6.984295470143709,106.55307213534006&z=17&output=embed"
                 width="100%"
                 height="200"
                 loading="lazy"
