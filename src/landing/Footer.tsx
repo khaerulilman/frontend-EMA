@@ -3,13 +3,22 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-800 text-white py-10">
       <div className="container mx-auto px-6 text-center md:text-left">
         <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0">
-
           {/* Social Media Section */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex flex-col space-y-2">
-              <a href="#" className="hover:text-blue-400">Facebook</a>
-              <a href="#" className="hover:text-blue-400">Twitter</a>
+              <a href="#" className="hover:text-blue-400">
+                Facebook
+              </a>
+              <a
+                href="https://wa.me/6285353890080"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-400"
+              >
+                whatsapp +62 853-5389-0080
+              </a>
+
               <a
                 href="https://www.instagram.com/english_my_adventure"
                 target="_blank"
@@ -24,9 +33,16 @@ const Footer: React.FC = () => {
           {/* Contact Section */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Information</h3>
-            <p className="mb-2"><strong>Phone:</strong> +62 853-5389-0080</p>
-            <p className="mb-2"><strong>Email:</strong> syifa3596@gmail.com</p>
-            <p><strong>Address:</strong> Jl. Badak Putih, Pelabuhanratu, Indonesia</p>
+            <p className="mb-2">
+              <strong>Phone:</strong> +62 853-5389-0080
+            </p>
+            <p className="mb-2">
+              <strong>Email:</strong> syifa3596@gmail.com
+            </p>
+            <p>
+              <strong>Address:</strong> Jl. Badak Putih, Pelabuhanratu,
+              Indonesia
+            </p>
           </div>
 
           {/* Map Section */}
@@ -43,7 +59,6 @@ const Footer: React.FC = () => {
               ></iframe>
             </div>
           </div>
-
         </div>
 
         {/* Copyright */}

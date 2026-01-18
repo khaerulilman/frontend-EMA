@@ -9,6 +9,7 @@ import PriceCourse from "../landing/PriceCourse";
 import ProductPreview from "../landing/ProductPreview";
 import DocumentationSection from "../landing/DocumentationSection";
 import CertificateSection from "../landing/CertificateSection";
+import RoomPreview from "../landing/RoomPreview";
 import TestimonialSection from "../landing/TestimonialSection ";
 import MotivationSection from "../landing/MotivationSection";
 
@@ -38,8 +39,12 @@ const Home: React.FC = () => {
         <ProductPreview />
       </section> */}
       <DocumentationSection />
+
       <section id="certificate">
         <CertificateSection />
+      </section>
+      <section id="rooms">
+        <RoomPreview />
       </section>
       <TestimonialSection />
       <MotivationSection />
