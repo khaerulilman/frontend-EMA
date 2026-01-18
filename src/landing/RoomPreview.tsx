@@ -87,7 +87,7 @@ const RoomPreview = () => {
         {/* Slider Container */}
         <div className="relative ">
           <motion.div
-            className="bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-yellow-300 shadow-lg"
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-yellow-300"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
