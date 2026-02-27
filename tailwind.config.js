@@ -14,8 +14,8 @@ module.exports = {
         blackCustom: "#000000",
       },
       fontFamily: {
-        sans: ["Gotham", "sans-serif"],
-        rounded: ["Gotham Rounded", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
       },
     },
   },

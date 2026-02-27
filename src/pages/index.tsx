@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navbar from "../landing/Navbar";
 import HeroSection from "../landing/HeroSection";
+import TransitionSection from "../landing/TransitionSection";
 import Features from "../landing/Features";
 import Footer from "../landing/Footer";
 import HowToStart from "../landing/HowToStart";
@@ -27,13 +28,14 @@ const Home: React.FC = () => {
       <section id="home">
         <HeroSection />
       </section>
+      <TransitionSection />
       <Features />
-      <HowToStart />
+      {/* <HowToStart /> */}
       <section id="tutorprofile">
         <TutorProfile />
       </section>
       <section id="pricecourse">
-       <PriceCourse /> 
+        <PriceCourse />
       </section>
       {/* <section id="Product">
         <ProductPreview />
@@ -47,7 +49,6 @@ const Home: React.FC = () => {
         <RoomPreview />
       </section>
       <TestimonialSection />
-      <MotivationSection />
       <Footer />
     </div>
   );

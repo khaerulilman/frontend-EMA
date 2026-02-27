@@ -22,22 +22,6 @@ const TutorProfile = () => {
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Decorative top border */}
-      <div className="absolute top-0 left-0 right-0">
-        <div className="h-1 bg-gradient-to-r from-blue-600 via-yellow-400 to-blue-600"></div>
-        <svg
-          className="text-blue-600 w-full h-8"
-          viewBox="0 0 1200 30"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 Q300,30 600,0 T1200,0 V30 H0 Z"
-            fill="currentColor"
-            opacity="0.1"
-          />
-        </svg>
-      </div>
-
       <motion.div
         className="container mx-auto px-4"
         variants={containerVariants}

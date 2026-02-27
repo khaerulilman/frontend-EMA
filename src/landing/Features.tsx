@@ -24,21 +24,18 @@ const Video = () => {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+      prevIndex === videos.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? videos.length - 1 : prevIndex - 1
+      prevIndex === 0 ? videos.length - 1 : prevIndex - 1,
     );
   };
 
   return (
     <section className="relative py-20 bg-yellowCustom">
-      {/* Border atas */}
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blueCustom to-transparent"></div>
-
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-rounded font-bold mb-12 text-blueCustom text-center">
           <span className="text-white font-more-sugar">Our</span>{" "}
@@ -90,9 +87,6 @@ const Video = () => {
           </div>
         </div>
       </div>
-
-      {/* Border bawah */}
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blueCustom to-transparent"></div>
     </section>
   );
 };
