@@ -130,9 +130,7 @@ const QuizPage: React.FC = () => {
                   className="block group"
                 >
                   <div
-                    className="bg-white rounded-3xl shadow-lg overflow-hidden 
-                    border-2 border-transparent hover:border-blueCustom
-                    transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                    className="bg-white shadow-lg overflow-hidden border-2 border-transparent hover:border-blueCustom transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 rounded-none"
                   >
                     {/* Image Container */}
                     <div className="relative overflow-hidden">
@@ -146,9 +144,9 @@ const QuizPage: React.FC = () => {
                       />
                       {/* Badge */}
                       <div className="absolute top-4 left-4 z-20">
-                        <span
-                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold ${quiz.badgeBg} shadow-md backdrop-blur-sm`}
-                        >
+                         <span
+                           className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold ${quiz.badgeBg} shadow-md backdrop-blur-sm`}
+                         >
                           <quiz.icon size={14} />
                           {quiz.badge}
                         </span>
@@ -199,7 +197,7 @@ const QuizPage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="text-center mt-16"
           >
-            <div className="bg-blueCustom/5 border-2 border-blueCustom/20 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
+               <div className="bg-blueCustom/5 border-2 border-blueCustom/20 rounded-none p-8 md:p-12 max-w-3xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold text-blueCustom mb-4">
                 Ready to Level Up Your English?
               </h3>
@@ -212,11 +210,11 @@ const QuizPage: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-yellowCustom text-blueCustom rounded-full font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/30"
-                >
+                 <motion.button
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
+                   className="px-8 py-3 bg-yellowCustom text-blueCustom font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/30 rounded-none"
+                 >
                   Join Now 🚀
                 </motion.button>
               </a>

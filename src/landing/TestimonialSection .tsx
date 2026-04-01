@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Award, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -69,31 +69,48 @@ const TestimonialSection = () => {
       role: "English Student",
       rating: 5,
       comment:
-      "Selama ini hanya mengerti kata dan kalimat sederhana, setelah les menjadi lebih banyak kosa kata dan kalimat yg dimengerti dan lebih baik dalam pronunciationnya. Di rumah juga mulai berani speak english.",
-      imageSrc: "https://ik.imagekit.io/fs0yie8l6/Ema-course/gambar-1-testimoni.jpg",
-      },
-      {
+        "Selama ini hanya mengerti kata dan kalimat sederhana, setelah les menjadi lebih banyak kosa kata dan kalimat yg dimengerti dan lebih baik dalam pronunciationnya. Di rumah juga mulai berani speak english.",
+      imageSrc:
+        "https://ik.imagekit.io/fs0yie8l6/Ema-course/gambar-1-testimoni.jpg",
+    },
+    {
       id: 7,
       name: "Qianzi",
       role: "English Student",
       rating: 5,
       comment:
-      "Alhamdulillah udh bisa menyebutkan angka2, buah2an dan warna dlam bhs inggris",
-      imageSrc: "https://ik.imagekit.io/fs0yie8l6/Ema-course/gambar-2-testimoni.jpg",
-      },
+        "Alhamdulillah udh bisa menyebutkan angka2, buah2an dan warna dlam bhs inggris",
+      imageSrc:
+        "https://ik.imagekit.io/fs0yie8l6/Ema-course/gambar-2-testimoni.jpg",
+    },
+    {
+      id: 8,
+      name: "Nazhira",
+      role: "English Student",
+      rating: 5,
+      comment:
+        "My experience of the English course with Miss Syifa was very fun. Miss taught many things to her students.",
+      imageSrc: "/assets/images/user2.jpg",
+    },
   ];
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
+      prev === testimonials.length - 1 ? 0 : prev + 1,
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1,
     );
   };
+
+  const desktopVisibleCount = 3;
+  const desktopTestimonials = Array.from(
+    { length: Math.min(desktopVisibleCount, testimonials.length) },
+    (_, offset) => testimonials[(currentIndex + offset) % testimonials.length],
+  );
 
   const TestimonialCard = ({
     testimonial,
@@ -165,14 +182,64 @@ const TestimonialSection = () => {
           <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-              index={index}
-            />
-          ))}
+        <div className="md:hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={testimonials[currentIndex].id}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4 }}
+            >
+              <TestimonialCard
+                testimonial={testimonials[currentIndex]}
+                index={0}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="hidden md:block">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4 }}
+              className="grid md:grid-cols-3 gap-8"
+            >
+              {desktopTestimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={`${testimonial.id}-${currentIndex}-${index}`}
+                  testimonial={testimonial}
+                  index={index}
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="flex items-center justify-center gap-4 mt-10">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={prevSlide}
+            className="bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 shadow-lg transition-all duration-300 border border-blue-100"
+            aria-label="Previous testimonials"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={nextSlide}
+            className="bg-white/90 hover:bg-white text-blue-600 rounded-full p-3 shadow-lg transition-all duration-300 border border-blue-100"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </motion.button>
         </div>
       </div>
     </section>

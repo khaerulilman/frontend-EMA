@@ -47,7 +47,7 @@ const TutorProfile = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-yellow-400 rounded-full animate-spin-slow"></div>
             <img
-              src="/assets/images/tutor-syifa.jpeg"
+              src="/assets/images/syifa.jpg"
               alt="Tutor"
               className="absolute inset-0 w-full h-full object-cover border-4 border-white rounded-full"
             />
