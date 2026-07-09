@@ -13,6 +13,7 @@ import CertificateSection from "../landing/CertificateSection";
 import RoomPreview from "../landing/RoomPreview";
 import TestimonialSection from "../landing/TestimonialSection ";
 import MotivationSection from "../landing/MotivationSection";
+import CollaboratorSection from "../landing/CollaboratorSection";
 
 const Home: React.FC = () => {
   return (
@@ -49,6 +50,7 @@ const Home: React.FC = () => {
         <RoomPreview />
       </section>
       <TestimonialSection />
+      <CollaboratorSection />
       <Footer />
     </div>
   );
